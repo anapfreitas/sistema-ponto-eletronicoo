@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FuncionarioController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\RegistroPontoController;
+use App\Http\Controllers\RelatorioController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +20,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+    
 });
+
+Route::resource('funcionarios', FuncionarioController::class);
+
+Route::resource('users', UserController::class);
+
+Route::resource('registros-ponto', RegistroPontoController::class);
+
+Route::resource('relatorios', RelatorioController::class);
